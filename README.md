@@ -4,5 +4,5 @@ Got a rental shop , but not consisting of a good crowd?
 Own a gift from someone, that is of no use to you ?
 Want to have a sizzling dress but at a cheaper price?
 Relax :)
-We’ve got your back!!
+We’ve got your back!
 
