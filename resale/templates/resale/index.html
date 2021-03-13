@@ -151,7 +151,7 @@ function updatePopover(cart) {
 function clearCart() {
     cart = JSON.parse(localStorage.getItem('cart'));
     for (var item in cart) {
-        document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-primary cart">Add To Cart</button>'
+        document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-secondary cart">Add To Cart</button>'
     }
     localStorage.clear();
     cart = {};
