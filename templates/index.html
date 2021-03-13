@@ -1,0 +1,210 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="colored-section" id="tagline">
+  <div class="container-fluid pt-0">
+    <div class="row">
+      <div class="col-lg-6 typewriter">
+        <h1 class="big-heading" id="type"></h1>
+      </div>
+      <!--Carousel Wrapper-->
+      <div class="col-lg-6 pt-4">
+        <div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
+          <!--Indicators-->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-2" data-slide-to="1"></li>
+            <li data-target="#carousel-example-2" data-slide-to="2"></li>
+          </ol>
+          <!--/.Indicators-->
+          <!--Slides-->
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="view">
+                <img class="d-block w-100" src="{% static 'images/stand.jfif'%}" alt="First slide">
+                <div class="mask rgba-black-light"></div>
+              </div>
+              <div class="carousel-caption">
+                <h3 class="h3-responsive">HOLY CHIC</h3>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!--Mask color-->
+              <div class="view">
+                <img class="d-block w-100" src="{% static 'images/accessories.jfif'%}" alt="Second slide">
+                <div class="mask rgba-black-strong"></div>
+              </div>
+              <div class="carousel-caption">
+                <h3 class="h3-responsive" style="color:#525252;">It's all about the bag</h3>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!--Mask color-->
+              <div class="view">
+                <img class="d-block w-100" src="{% static 'images/shoes.jfif'%}" alt="Second slide">
+                <div class="mask rgba-black-strong"></div>
+              </div>
+              <!-- <div class="carousel-caption">
+                <h3 class="h3-responsive"  style="color:burlywood;">You can never have enough shoes</h3>
+              </div> -->
+            </div>
+          </div>
+          <!--/.Slides-->
+          <!--Controls-->
+          <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <!--/.Controls-->
+        </div>
+      </div>
+    
+    <!--/.Carousel Wrapper-->
+    </div>
+  </div>
+</section>
+  <section class="white-section" id="features">
+    <div class="container-fluid">
+      <div class="row blog-head" style="font-size: 20px;">
+        <div class="feature-box col-lg-4">
+          <i class="icon fa fa-tree fa-4x"></i>
+          <h3 class="feature-title">Sustainable</h3>
+          <p>Cultivate good shopping habits.</p>
+        </div>
+        <div class="feature-box col-lg-4">
+          <i class="icon fa fa-trophy fa-4x"></i>
+          <h3 class="feature-title">Win-Win</h3>
+          <p>Make a difference in the world.</p>
+        </div>
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-fingerprint fa-4x"></i>
+          <h3 class="feature-title">One-of-a-kind</h3>
+          <p>Come across handpicked products.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+
+  <section class="colored-section" id="testimonials">
+
+    <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active container-fluid">
+          <h4 class="testimonial-text">Stores like Forever 21, H&M, Urban Outfitters, and basically any other big clothing retailer you can think of all fall into the category of fast fashion, which is the rapid mass production of super cheap clothing. Although the price tags may be low, the environmental costs are extremely high.</h4>
+          <!-- <img class="testimonial-image" src="images/dog-img.jpg" alt="dog-profile"> -->
+          <!-- <em>Berkeley U</em> -->
+        </div>
+        <div class="carousel-item container-fluid">
+          <h4 class="testimonial-text">Simply switching to thrifting isn’t going to completely solve all of the problems within the fashion and textile industry, but it is one way we can work to minimize our own carbon footprints and make small steps towards a better future.</h4>
+          <!-- <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile"> -->
+          <!-- <em>Beverly, Illinois</em> -->
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Pricing -->
+
+  <section class="white-section" id="pricing">
+
+    <h2 class="section-heading blog-head" style="font-size: 40px;">Something for everyone</h2>
+    <p class="blog-head" style="font-size: 20px;">Different options to suit your needs.</p>
+
+    <div class="row" style="font-size: 20px;">
+      <div class="pricing-column col-lg-3 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Thrift</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">Go easy on your pocket</h2>
+            {% if user.is_authenticated %}
+           <a href="{% url 'ResaleHome' %}"><button class="btn btn-lg btn-block btn-dark" type="button">Buy</button></a> 
+            {% else %}
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="myFunction()">Buy</button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-3 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Rentals</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">Rent out clothes</h2>
+            {% if user.is_authenticated %}
+            <a href="{% url 'ShopHome' %}"><button class="btn btn-lg btn-block btn-dark" type="button">Browse</button></a> 
+            {% else %}
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="myFunction()">Browse</button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-3 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Resale</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">Make some money</h2>
+            {% if user.is_authenticated %}
+            <a href="{% url 'RForm' %}"><button class="btn btn-lg btn-block btn-dark" type="button">Up for sale</button></a>
+            {% else %}
+            <button class="btn btn-lg btn-block btn-dark" type="button" onclick="myFunction()">Up for sale</button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-3 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>Rent</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">Rent the runway</h2>
+            {% if user.is_authenticated %}
+          <a href="{% url 'Form' %}"> <button class="btn btn-lg btn-block btn-dark" type="button">Up for rent</button></a>
+          {% else %}
+          <button class="btn btn-lg btn-block btn-dark" type="button" onclick="myFunction()">Up for rent</button>
+          {% endif %}
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function myFunction() {
+      alert("Register/Login to thrift!");
+    }
+    var i = 0;
+    var txt = 'You are in good company! Meet your fellow thrifters here.'
+    var speed = 100;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("type").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    window.onload = function() {
+      typeWriter();
+    };
+    </script>
+
+{% endblock %}

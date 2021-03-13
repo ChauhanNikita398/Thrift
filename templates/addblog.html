@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="white-section" id="addblog">
+    <div class="container-fluid blog-head">
+        <div class="row card pb-1 pt-1" style="background-color: #f9f1f2; font-size:20px;">
+            <br>
+            <form action="add" method="post" style="margin: 0 auto;">
+                {% csrf_token %}
+                <h3>Blog</h3>
+                <hr>
+                <label for="name" class="form-label">Item Name</label>
+                <input type="text" name="name" class="form-control"><br>
+                <label for="description" class="form-label">Description</label>
+                <input type="text" name="description" class="form-control"><br>
+                <label for="price" class="form-label">Price(in Rupees)</label>
+                <input type="number" name="price" class="form-control"><br>
+                <label for="img" class="form-label">Select image:</label>
+                <input type="file" name="img" accept="image/*" class="form-control"><br>
+                <input type="submit" class="btn btn-secondary"><br>
+            </form>
+            <br>
+        </div>
+    </div>
+  </section>
+    <!-- <section class="white-section" id="addblog">
+        <div class="page-wrapper p-t-100 p-b-50 container-fluid">
+            <div class="wrapper wrapper--w900">
+                <div class="card card-6">
+                    <div class="card-heading">
+                        <h2 class="title">Blog</h2>
+                    </div>
+                    <div class="card-body row">
+                        <form action="add" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="name">Name</div> <br>
+                                <div class="value">
+                                    <input class="input--style-6" type="text" name="name">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Price</div> <br>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-6" type="number" name="price">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Description</div> <br>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <textarea class="textarea--style-6" name="description" placeholder="description of item"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Upload Image</div> <br>
+                                <div class="value">
+                                    <div class="input-group js-input-file">
+                                        <input class="input-file" type="file" name="img" accept="image/*">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <input class="btn btn--radius-2 btn--blue-2" type="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+{% endblock %}
