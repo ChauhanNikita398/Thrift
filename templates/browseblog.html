@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="white-section" id="addblog">
+    {% for blog in blogs %}
+    <div class="container-fluid col-lg-12 pt-8 pb-0">
+        <div class="card card-columns blog" style="background-color: #f9f1f2;">
+            <div class="card-header blog-head">
+                <h2>{{blog.name}}</h2>
+                <p>{{blog.desc}}</p>
+            </div>
+            <div class="card-body">
+                <img src="{{blog.img.url}}" alt=""><br>
+                <hr>
+                <h6>Rs.{{blog.price}}</h6><br>
+                <div class="blog-comm">
+                    <em>Liked by</em> {{blog.recommend}}% <br><br>
+                    {% for comment in comments %}
+                    {% if comment.blog_id == blog.id %}
+                    <p>-{{comment.comment}}</p>
+                    {% endif %}
+                    {% endfor %}
+                </div><br>             
+            </div>
+        
+        <div>
+            <form action="browse" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="blog_id" value="{{blog.id}}">
+                <input type="text" name="comment" placeholder="Comment">
+                <button type="submit" class="btn btn-sm btn-secondary">Post</button>
+                <br>
+            </form>
+            <br>
+        </div></div><br>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}  
