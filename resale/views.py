@@ -99,7 +99,7 @@ def checkout(request):
     return render(request, 'resale/checkout.html')
 def msg(val,phone,id):
     account_sid = 'AC88d4562da72fc05eb55b52edebe70bbc' 
-    auth_token = 'e7e6caeb16996e2dbf5b224a03359818' 
+    auth_token = 'e7e6caeb16996e2dbf5b224a03359818'
     client = Client(account_sid, auth_token) 
     
     message = client.messages.create( 
